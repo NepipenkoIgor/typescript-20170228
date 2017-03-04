@@ -1,11 +1,40 @@
 type menuList = {
   title: string;
-  items: string[]
-}[]
+  items?: menuList;
+}[];
 
-const menuList: menuList = [
-  { title: 'JavaScript', items: ['React', 'Angular2', 'Cycle.js'] },
-  { title: 'Dart', items: ['Flutter', 'Angular2', 'Polymer'] },
+const menuData: menuList = [
+  {
+    title: 'Животные', items: [
+      {
+        title: 'Млекопитающие', items: [
+          { title: 'Коровы' },
+          { title: 'Ослы' },
+          { title: 'Собаки' },
+          { title: 'Тигры' }
+        ]
+      }, {
+        title: 'Другие', items: [
+          { title: 'Змеи' },
+          { title: 'Птицы' },
+          { title: 'Ящерицы' }
+        ],
+      }
+    ]
+  }, {
+    title: 'Рыбы', items: [
+      {
+        title: 'Аквариумные', items: [
+          { title: 'Гуппи' },
+          { title: 'Скалярии' }
+        ]
+      }, {
+        title: 'Форель', items: [
+          { title: 'Морская форель' }
+        ]
+      }
+    ]
+  }
 ];
 
 function generateMenu(list: menuList): string {
@@ -23,7 +52,7 @@ function generateMenu(list: menuList): string {
 }
 
 let navMenuList = document.querySelector('.menu') as HTMLDivElement;
-navMenuList.innerHTML = generateMenu(menuList);
+navMenuList.innerHTML = generateMenu(menuData);
 navMenuList.onclick = (ev: MouseEvent) => {
   let el = ev.target as HTMLAnchorElement;
   let classList = el.classList;
