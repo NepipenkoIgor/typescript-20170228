@@ -34,11 +34,12 @@ const menuData = [
 function generateMenu(list) {
     let content = `<ul>`;
     for (let a of list) {
-        content += `<li><a class='title'>${a.title}</a><ul>`;
-        for (let item of a.items) {
-            content += `<li><a>${item}</a></li>`;
+        if (a.items) {
+            content += `<li><a class='title'>${a.title}</a>${generateMenu(a.items)}</li>`;
         }
-        content += `</li></ul>`;
+        else {
+            content += `<li><a>${a.title}</a></li>`;
+        }
     }
     content += `</ul>`;
     return content;
