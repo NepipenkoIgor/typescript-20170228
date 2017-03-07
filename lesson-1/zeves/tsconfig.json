@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "noEmitOnError": false,
+        "strictNullChecks":false,
+        "outFile":"main.js"
+    },
+    "include": [
+        "lesson-1.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

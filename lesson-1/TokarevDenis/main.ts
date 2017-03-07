@@ -1,24 +1,29 @@
 type menuList = {
   title: string;
-  items: string[]
+  items: (menuList | string)[]
 }[]
 
 const menuList: menuList = [
-  { title: 'JavaScript', items: ['React', 'Angular2', 'Cycle.js'] },
+  { title: 'JavaScript', items: [[{ title: 'React', items: ['1', '2', '3'] }, { title: 'Smth', items: ['4', '5', '6'] }], 'Angular2', 'Cycle.js'] },
   { title: 'Dart', items: ['Flutter', 'Angular2', 'Polymer'] },
 ];
 
-function generateMenu(list: menuList): string {
+function generateMenu(list: menuList, flg?: boolean): string {
 
-  let content: string = `<ul>`;
+  let content: string = flg ? `` : `<ul>`;
   for (let a of list) {
     content += `<li><a class='title'>${a.title}</a><ul>`;
     for (let item of a.items) {
-      content += `<li><a>${item}</a></li>`
+      if (Array.isArray(item)) {
+        content += generateMenu(item, true);
+      }
+      else {
+        content += `<li><a>${item}</a></li>`;
+      }
     }
     content += `</li></ul>`
   }
-  content += `</ul>`
+  content += flg ? `` : `</ul>`;
   return content;
 }
 
@@ -32,4 +37,4 @@ navMenuList.onclick = (ev: MouseEvent) => {
   }
   let parentLi = el.parentNode as HTMLLIElement;
   parentLi.classList.toggle('menu-open')
-}
+};
