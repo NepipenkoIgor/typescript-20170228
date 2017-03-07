@@ -1,10 +1,10 @@
 type menuList = {
   title: string;
-  items: (menuList|string)[]
+  items: (menuList | string)[]
 }[]
 
 const menuList: menuList = [
-  { title: 'JavaScript', items: [ [{title: 'React', items: ['1', '2', '3']}, {title: 'Smth', items: ['4', '5', '6']}], 'Angular2', 'Cycle.js'] },
+  { title: 'JavaScript', items: [[{ title: 'React', items: ['1', '2', '3'] }, { title: 'Smth', items: ['4', '5', '6'] }], 'Angular2', 'Cycle.js'] },
   { title: 'Dart', items: ['Flutter', 'Angular2', 'Polymer'] },
 ];
 
@@ -14,12 +14,10 @@ function generateMenu(list: menuList, flg?: boolean): string {
   for (let a of list) {
     content += `<li><a class='title'>${a.title}</a><ul>`;
     for (let item of a.items) {
-      if(Array.isArray(item))
-      {
+      if (Array.isArray(item)) {
         content += generateMenu(item, true);
       }
-      else
-      {
+      else {
         content += `<li><a>${item}</a></li>`;
       }
     }

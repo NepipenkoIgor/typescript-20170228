@@ -8,42 +8,42 @@ type Menu = MenuItem[]
 const menu: Menu = [
     {
         title: 'Животные', items: [
-        {
-            title: 'Млекопитающие', items: [
             {
-                title: 'Коровы', items: [
-                {title: 'Коровы молочной породы'},
-                {title: 'Мясные породы коров'}
-            ]
+                title: 'Млекопитающие', items: [
+                    {
+                        title: 'Коровы', items: [
+                            { title: 'Коровы молочной породы' },
+                            { title: 'Мясные породы коров' }
+                        ]
+                    },
+                    { title: 'Ослы' },
+                    { title: 'Собаки' },
+                    { title: 'Тигры' }
+                ]
             },
-            {title: 'Ослы'},
-            {title: 'Собаки'},
-            {title: 'Тигры'}
+            {
+                title: 'Другие', items: [
+                    { title: 'Змеи' },
+                    { title: 'Птицы' },
+                    { title: 'Ящерицы' },
+                ],
+            },
         ]
-        },
-        {
-            title: 'Другие', items: [
-            {title: 'Змеи'},
-            {title: 'Птицы'},
-            {title: 'Ящерицы'},
-        ],
-        },
-    ]
     },
     {
         title: 'Рыбы', items: [
-        {
-            title: 'Аквариумные', items: [
-            {title: 'Гуппи'},
-            {title: 'Скалярии'}
+            {
+                title: 'Аквариумные', items: [
+                    { title: 'Гуппи' },
+                    { title: 'Скалярии' }
+                ]
+            },
+            {
+                title: 'Форель', items: [
+                    { title: 'Морская форель' }
+                ]
+            },
         ]
-        },
-        {
-            title: 'Форель', items: [
-            {title: 'Морская форель'}
-        ]
-        },
-    ]
     }
 ];
 
@@ -52,9 +52,9 @@ function generateMenu(menu: Menu): string {
     for (let menuItem of menu) {
         if (menuItem.items) {
             content += `<li><a class='title'>${menuItem.title}</a>${generateMenu(menuItem.items)}</li>`;
-        } else {
-            content += `<li><a>${menuItem.title}</a></li>`;
+            continue
         }
+        content += `<li><a>${menuItem.title}</a></li>`;
     }
     content += '</ul>';
     return content;

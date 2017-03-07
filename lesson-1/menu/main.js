@@ -1,54 +1,15 @@
-const menuList = [{
-        title: 'Животные',
-        items: [{
-                title: 'Млекопитающие',
-                items: [
-                    { title: 'Коровы' },
-                    { title: 'Ослы' },
-                    { title: 'Собаки' },
-                    { title: 'Тигры' }
-                ]
-            }, {
-                title: 'Другие',
-                items: [
-                    { title: 'Змеи' }, {
-                        title: 'Птицы',
-                        items: [
-                            { title: 'Голуби',
-                                items: [{
-                                        title: 'Крупные'
-                                    }, {
-                                        title: 'Мелкие'
-                                    }] },
-                            { title: 'Вороны' }
-                        ]
-                    },
-                    { title: 'Ящерицы' },
-                ],
-            },]
-    }, {
-        title: 'Рыбы',
-        items: [{
-                title: 'Аквариумные',
-                items: [
-                    { title: 'Гуппи' },
-                    { title: 'Скалярии' }
-                ]
-            }, {
-                title: 'Форель',
-                items: [
-                    { title: 'Морская форель' }
-                ]
-            },]
-    }];
+const menuList = [
+    { title: 'JavaScript', items: ['React', 'Angular2', 'Cycle.js'] },
+    { title: 'Dart', items: ['Flutter', 'Angular2', 'Polymer'] },
+];
 function generateMenu(list) {
     let content = `<ul>`;
     for (let a of list) {
-        content += `<li><a class='title'>${a.title}</a>`;
-        if (a.items) {
-            content += generateMenu(a.items);
-            content += `</li>`;
+        content += `<li><a class='title'>${a.title}</a><ul>`;
+        for (let item of a.items) {
+            content += `<li><a>${item}</a></li>`;
         }
+        content += `</li></ul>`;
     }
     content += `</ul>`;
     return content;

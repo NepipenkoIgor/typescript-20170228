@@ -7,7 +7,7 @@
         "noEmitOnError": true
     },
     "include": [
-        "lesson-1/TokarevDenis/main.ts"
+        "*.ts"
     ],
     "exclude": [
         "node_modules"

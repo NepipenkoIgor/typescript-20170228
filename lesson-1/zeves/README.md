@@ -1,4 +1,4 @@
-вопросы:
+:вопросы:
 
 1. В файле tsconfig.json include/exclude - откуда учитываются пути?:
     * lesson-1/zeves/main.ts
