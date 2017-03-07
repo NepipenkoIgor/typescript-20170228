@@ -150,7 +150,7 @@
 
 // let acc:account;
 
-// type g = {x:g} 
+// type g = {x:g}
 
 // type IAcc= {
 //     name:string;
