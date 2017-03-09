@@ -1,7 +1,7 @@
 type menuList = {
   title: string;
   items?: menuList
-}[]
+}[];
 
 const menuList: menuList = [
   {
@@ -58,7 +58,7 @@ function generateMenu(list: menuList): string {
   content += `</ul>`
 
   return content;
-}
+};
 
 let navMenuList = document.querySelector('.menu') as HTMLDivElement;
 
@@ -75,4 +75,4 @@ navMenuList.onclick = (ev: MouseEvent) => {
   let parentLi = el.parentNode as HTMLLIElement;
 
   parentLi.classList.toggle('menu-open')
-}
+};
