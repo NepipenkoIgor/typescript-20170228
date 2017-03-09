@@ -8,11 +8,9 @@
         "strictNullChecks":false
     },
     "include": [
-        // "lesson-1/class-work.ts",
-        // "lesson-1/menu/main.ts",
-        "lesson-2/menu/menu.ts"
+        "./main.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
-    // "exclude": [
-    //     "node_modules"
-    // ]
 }

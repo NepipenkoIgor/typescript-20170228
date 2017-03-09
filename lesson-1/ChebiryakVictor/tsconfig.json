@@ -1,18 +1,16 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "es6",
+        "target": "es5",
         "noImplicitAny": false,
         "sourceMap": false,
         "noEmitOnError": true,
         "strictNullChecks":false
     },
     "include": [
-        // "lesson-1/class-work.ts",
-        // "lesson-1/menu/main.ts",
-        "lesson-2/menu/menu.ts"
+        "*.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
-    // "exclude": [
-    //     "node_modules"
-    // ]
 }

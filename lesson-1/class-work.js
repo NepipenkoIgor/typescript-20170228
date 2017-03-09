@@ -109,7 +109,7 @@
 //     surname:string;
 // }
 // let acc:account;
-// type g = {x:g} 
+// type g = {x:g}
 // type IAcc= {
 //     name:string;
 //     surname:string;
@@ -151,4 +151,4 @@
 // interface A<P extends string|number>{
 //         someProperty:P
 // }
-// let b:A<{id:number,female:boolean}> 
+// let b:A<{id:number,female:boolean}>
