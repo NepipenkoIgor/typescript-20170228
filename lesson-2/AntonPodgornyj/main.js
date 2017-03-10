@@ -1,49 +1,41 @@
 //1
-function isInArray(a: any[], ...b: any[]): boolean {
+function isInArray(a, ...b) {
     if (!Array.isArray(a)) {
         return;
     }
     return b.every((item) => a.indexOf(item) !== -1);
-};
-
-//2
-type sn = string | number;
-
-function isNumber(a: sn): a is number {
+}
+;
+function isNumber(a) {
     return typeof a === 'number';
 }
-
-function summator(...params: sn[]): number {
+function summator(...params) {
     let sum = 0;
     params.forEach((param) => sum += isNumber(param) ? param : parseInt(param));
     return sum;
 }
-
 //3.1
-function getUnique_one(...a: any[]): Set<any>{
+function getUnique_one(...a) {
     let set = new Set();
-    a.forEach((item)=>set.add(item));
+    a.forEach((item) => set.add(item));
     return set;
 }
-
 //3.2
-function getUnique_two(...a: any[]): any[]{
+function getUnique_two(...a) {
     let rez = [];
-    a.forEach(function(item){
-        if(rez.indexOf(item) == -1){
+    a.forEach(function (item) {
+        if (rez.indexOf(item) == -1) {
             rez.push(item);
         }
     });
     return rez;
 }
-
 //4
-
-function isLet(char:string):boolean{
+function isLet(char) {
     return /[a-zA-z]/.test(char);
-};
-
-function revert(item:string):string{
+}
+;
+function revert(item) {
     let chars = item.split('');
     let tmp = [];
     let rez = Array(chars.length);
@@ -54,20 +46,22 @@ function revert(item:string):string{
     chars.forEach(function (item, i, array) {
         if (!isLet(item)) {
             rez[i] = item;
-        }else{
+        }
+        else {
             tmp.push(item);
         }
     });
-    for(let i= 0; i < chars.length; i++){
-        if(!rez[i]){
+    for (let i = 0; i < chars.length; i++) {
+        if (!rez[i]) {
             rez[i] = tmp.splice(-1)[0];
         }
     }
     return rez.join('');
-};
-
-function revertWords(str: string):string{
-    if(typeof str === 'string'){
+}
+;
+function revertWords(str) {
+    if (typeof str === 'string') {
         return str.split(' ').map(revert).join(' ');
     }
-};
+}
+;
