@@ -7,7 +7,8 @@
         "noEmitOnError": true
     },
     "include": [
-        "menu.ts"
+        "menu.ts",
+        "task-*.ts"
     ],
     "exclude": [
         "node_modules"
