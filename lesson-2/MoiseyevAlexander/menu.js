@@ -59,7 +59,7 @@ class Menu {
     _generateMenu(menuList) {
         let content = `<ul>`;
         for (let a of menuList) {
-            content += `<li><a ${a.items ? 'class=title' : ''}
+            content += `<li data-title="${a.title}"><a ${a.items ? 'class=title' : ''}
       ${a.link ? 'href=' + a.link : ''}>${a.title}</a>`;
             if (!a.items) {
                 content += `</li>`;
@@ -69,6 +69,26 @@ class Menu {
         }
         return `${content}</ul>`;
     }
+    getElem() {
+        return this._element;
+    }
+    _getMenuItemByTitle(title) {
+        let listItem = document.querySelector(`li[data-title='${title}']`);
+        return listItem;
+    }
+    open(title) {
+        let element = this._getMenuItemByTitle(title);
+        if (element) {
+            element.classList.add('menu-open');
+        }
+    }
+    close(title) {
+        this._getMenuItemByTitle(title).classList.remove('menu-open');
+    }
+    toggle(title) {
+        this._getMenuItemByTitle(title).classList.toggle('menu-open');
+    }
 }
 let element = document.querySelector('.menu');
 let nav = new Menu({ element, menuList });
+console.log(nav.getElem());

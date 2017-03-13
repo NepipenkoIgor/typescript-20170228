@@ -68,7 +68,7 @@ class Menu {
   protected _generateMenu(menuList: menuList): string {
     let content: string = `<ul>`;
     for (let a of menuList) {
-      content += `<li><a ${a.items ? 'class=title' : ''}
+      content += `<li data-title="${a.title}"><a ${a.items ? 'class=title' : ''}
       ${a.link ? 'href=' + a.link : ''}>${a.title}</a>`
       if (!a.items) {
         content += `</li>`;
@@ -78,7 +78,39 @@ class Menu {
     }
     return `${content}</ul>`
   }
+
+  public getElem(): HTMLElement {
+    return this._element;
+  }
+
+  protected _getMenuItemByTitle(title: string): HTMLElement {
+    let listItem: HTMLElement = document.querySelector(`li[data-title='${title}']`) as HTMLElement;
+    return listItem;
+  }
+
+  public open(title: string): void {
+    let listItem: HTMLElement = this._getMenuItemByTitle(title);
+    if (listItem) {
+      listItem.classList.add('menu-open');
+    }
+  }
+
+  public close(title: string): void {
+    let listItem: HTMLElement = this._getMenuItemByTitle(title);
+    if (listItem) {
+      listItem.classList.remove('menu-open');
+    }
+  }
+
+  public toggle(title: string): void {
+    let listItem: HTMLElement = this._getMenuItemByTitle(title);
+    if (listItem) {
+      listItem.classList.toggle('menu-open');
+    }
+  }
 }
 
 let element = document.querySelector('.menu') as HTMLElement;
-let nav = new Menu({ element, menuList })
+let nav = new Menu({ element, menuList });
+
+console.log( nav.getElem() );
