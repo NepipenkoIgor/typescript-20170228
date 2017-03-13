@@ -77,16 +77,22 @@ class Menu {
         return listItem;
     }
     open(title) {
-        let element = this._getMenuItemByTitle(title);
-        if (element) {
-            element.classList.add('menu-open');
+        let listItem = this._getMenuItemByTitle(title);
+        if (listItem) {
+            listItem.classList.add('menu-open');
         }
     }
     close(title) {
-        this._getMenuItemByTitle(title).classList.remove('menu-open');
+        let listItem = this._getMenuItemByTitle(title);
+        if (listItem) {
+            listItem.classList.remove('menu-open');
+        }
     }
     toggle(title) {
-        this._getMenuItemByTitle(title).classList.toggle('menu-open');
+        let listItem = this._getMenuItemByTitle(title);
+        if (listItem) {
+            listItem.classList.toggle('menu-open');
+        }
     }
 }
 let element = document.querySelector('.menu');
