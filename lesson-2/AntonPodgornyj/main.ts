@@ -71,3 +71,8 @@ function revertWords(str: string):string{
         return str.split(' ').map(revert).join(' ');
     }
 };
+
+//5*****************************************************************
+
+
+
