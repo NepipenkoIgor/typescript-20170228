@@ -10,6 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jquery": "^2.0.41",
+    "@types/lodash": "^4.14.55",
+    "awesome-typescript-loader": "^3.1.2",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "webpack": "^2.2.1"
   }
 }

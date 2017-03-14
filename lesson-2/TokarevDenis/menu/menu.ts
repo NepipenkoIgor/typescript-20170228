@@ -45,14 +45,16 @@ let menuList: menuList = [
 ];
 
 class Menu {
-  protected _element: HTMLElement;
-  protected _menuList: menuList;
-
   public getElemButton: HTMLElement;
   public toggleButton: HTMLElement;
   public openButton: HTMLElement;
   public closeButton: HTMLElement;
   public aimedLi: HTMLLIElement;
+
+
+  protected _element: HTMLElement;
+  protected _menuList: menuList;
+
 
   public constructor(opt: menuOpt) {
     this._element = opt.element;

@@ -20,10 +20,11 @@ function summator(...params: sn[]): number {
 }
 
 //3.1
-function getUnique_one(...a: any[]): Set<any>{
-    let set = new Set();
-    a.forEach((item)=>set.add(item));
-    return set;
+function getUnique_one(...a: any[]): any[]{
+    return [...new Set(a)]
+    // let set = new Set();
+    // a.forEach((item)=>set.add(item));
+    // return set;
 }
 
 //3.2

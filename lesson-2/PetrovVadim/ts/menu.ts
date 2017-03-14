@@ -54,6 +54,19 @@ class Menu {
 		this._element.addEventListener('click', this._clickHandler);
 	}
 
+	public getElem():HTMLElement {
+		return this._element;
+	}
+
+	public toggle(el:string):void {
+		let li = document.querySelector(el);
+		li.classList.toggle('menu-open');
+	}
+
+	public close (el:string):void {
+		let li = document.querySelector(el);
+		li.classList.remove('menu-open');
+	}
 
 	protected _clickHandler(this: void, ev: MouseEvent) {
 		let el: HTMLElement = ev.target as HTMLElement;
@@ -77,20 +90,6 @@ class Menu {
 			content += `${this._generateMenu(a.items)}</li>`
 		}
 		return `${content}</ul>`
-	}
-
-	public getElem():HTMLElement {
-		return this._element;
-	}
-
-	public toggle(el:string):void {
-		let li = document.querySelector(el);
-		li.classList.toggle('menu-open');
-	}
-
-	public close (el:string):void {
-		let li = document.querySelector(el);
-		li.classList.remove('menu-open');
 	}
 
 	public open (el:string):void {
