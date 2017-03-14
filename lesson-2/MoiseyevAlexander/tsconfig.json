@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "noEmitOnError": true
+    },
+    "include": [
+        "menu.ts",
+        "task-*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
