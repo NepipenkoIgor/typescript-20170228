@@ -1,0 +1,33 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<ul>
+		<li>
+			<button onclick="console.log(nav.getElem())">console.log(nav.getElem())</button>
+		</li>
+		<li>
+			<button onclick="nav.toggle('.menu ul li:first-child')">nav.toggle('.menu ul li:first-child')</button>
+		</li>
+		<li>
+			<button onclick="nav.close('.menu ul li:first-child')">nav.close('.menu ul li:first-child')</button>
+		</li>
+		<li>
+			<button onclick="nav.open('.menu ul li:first-child')">nav.open('.menu ul li:first-child')</button>
+		</li>
+	</ul>
+	<div class="menu"></div>
+	<div class="slider" class="slider">
+		<div class="thumb"></div>
+	</div>
+	<script src="main.js"></script>
+	<script src="menu.js"></script>
+	<script src="slider.js"></script>
+</body>
+
+</html>

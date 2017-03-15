@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "noEmitOnError": true
+    },
+    "include": [
+	  "lesson-2/menu/menu.ts",
+	  //"lesson-2/HW_part1/main.ts",
+	  //"lesson-2/HW_part3/main.ts",
+
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
