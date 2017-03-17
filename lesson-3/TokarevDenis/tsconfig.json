@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "noEmitOnError": true
+    },
+    "include": [
+	  "lesson-3/TokarevDenis/main.ts",
+	  "lesson-3/TokarevDenis/tests.ts"
+	  //"lesson-2/HW_part1/main.ts",
+	  //"lesson-2/HW_part3/main.ts",
+
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
