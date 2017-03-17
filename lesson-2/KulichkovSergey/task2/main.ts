@@ -1,13 +1,16 @@
 type sn = string | number;
 
-function isString(a: sn): a is string {
-    return typeof a === 'string';
+function isNumber(a: sn): a is number {
+    return typeof a === 'number';
 }
 
 function summator(...params: sn[]): number {
-    let sum = 0;
-
-    params.forEach((param) => sum += isString(param) ? parseInt(param) : param);
-
-    return sum;
+    return params.reduce<number>(
+        (acc: number, next: sn) => {
+            return isNumber(next) ?
+                (acc + next) :
+                isNaN(Number(next)) ?
+                    acc :
+                    acc + Number(next)
+        }, 0);
 }
