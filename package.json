@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "concurrently \"webpack -w\" \"tsc -w -p ./lesson-3/ChebiryakVictor/tsconfig.json\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +14,7 @@
     "@types/jquery": "^2.0.41",
     "@types/lodash": "^4.14.55",
     "awesome-typescript-loader": "^3.1.2",
+    "concurrently": "^3.4.0",
     "tslint": "^4.5.1",
     "typescript": "^2.2.1"
   },

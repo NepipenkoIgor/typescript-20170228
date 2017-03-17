@@ -3,7 +3,6 @@
     "module": "commonjs",
     "lib": [
       "es6",
-      "es7",
       "dom",
       "es2016.array.include"
     ],
@@ -13,12 +12,12 @@
     "noEmitOnError": true,
     "strictNullChecks": false,
     "removeComments": true,
-    "declaration": true,
-    "typeRoots": [
-      "types"
-    ]
+    "declaration": true
   },
   "include": [
-    "main.ts"
+    "functions.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
