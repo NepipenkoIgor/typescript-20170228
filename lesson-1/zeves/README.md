@@ -1,9 +1,9 @@
 :вопросы:
 
 1. В файле tsconfig.json include/exclude - откуда учитываются пути?:
-    * lesson-1/zeves/main.ts
-    * ./lesson-1/zeves/main.ts
-    * /lesson-1/zeves/main.ts
+    * lesson-1/zeves/flickr.ts
+    * ./lesson-1/zeves/flickr.ts
+    * /lesson-1/zeves/flickr.ts
 
 2. [вопрос специфичный для Atom] Каким образом идет переопределение tsconig.json файла если для подпапок есть свой файл ?
 

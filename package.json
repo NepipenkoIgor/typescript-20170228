@@ -5,21 +5,26 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"webpack -w\" \"tsc -w -p ./lesson-3/ChebiryakVictor/tsconfig.json\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require ts-node/register lesson-4/main.spec.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^3.4.35",
     "@types/jquery": "^2.0.41",
     "@types/lodash": "^4.14.55",
+    "@types/mocha": "^2.2.40",
     "awesome-typescript-loader": "^3.1.2",
     "concurrently": "^3.4.0",
     "tslint": "^4.5.1",
     "typescript": "^2.2.1"
   },
   "dependencies": {
+    "chai": "^3.5.0",
     "lodash": "^4.17.4",
+    "mocha": "^3.2.0",
+    "ts-node": "^2.1.0",
     "webpack": "^2.2.1"
   }
 }

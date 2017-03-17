@@ -10,3 +10,5 @@
 class MyClass {
     public a: IValidator;
 }
+
+let a: mytype;

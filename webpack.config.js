@@ -1,7 +1,7 @@
 module.exports = {
-    entry: './lesson-3/ChebiryakVictor/main.ts',
+    entry: './lesson-4/flickr/main.ts',
     output: {
-        filename: './lesson-3/ChebiryakVictor/main.js'
+        filename: './lesson-4/flickr/bundle.js'
     },
     module: {
         rules: [
