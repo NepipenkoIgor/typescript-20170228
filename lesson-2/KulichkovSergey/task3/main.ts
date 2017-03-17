@@ -1,3 +1,4 @@
+// нужно переписать через reduce
 function getUnique(...params: any[]): any[] {
     let result = [];
 

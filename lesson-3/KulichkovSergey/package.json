@@ -1,0 +1,7 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "mocha -r ts-node/register task1/test.ts"
+  }
+}
